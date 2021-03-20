@@ -17,7 +17,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
     </ng-container>`,
 })
 export class AddressFormComponent implements OnInit {
-  formGroup = new FormGroup({
+  readonly formGroup = new FormGroup({
     city: new FormControl('', [Validators.required]),
     street: new FormControl('', [Validators.required, Validators.minLength(2)]),
   });

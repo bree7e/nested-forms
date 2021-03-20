@@ -13,11 +13,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
     		<label>E-mail</label>
     		<input type="text" formControlName="email" class="" />
     	</div>
-    	<pre>{{ formGroup.value | json }}</pre>
+    	<!-- <pre>{{ formGroup.value | json }}</pre> -->
     </ng-container>`,
 })
 export class GeneralFormComponent implements OnInit {
-  formGroup = new FormGroup({
+  readonly formGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
