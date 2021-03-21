@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class AppComponent {
   readonly title = 'Nested Forms';
   readonly formGroup = new FormGroup({
-    // general: new FormControl({}),
-    // address: new FormControl({}),
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    'third-address': new FormControl(),
   });
 }

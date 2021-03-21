@@ -16,7 +16,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
     	<pre>{{ formGroup.value | json }}</pre>
     </ng-container>`,
 })
-export class AddressFormComponent implements OnInit {
+export class AddressFormSecondComponent implements OnInit {
   readonly formGroup = new FormGroup({
     city: new FormControl('', [Validators.required]),
     street: new FormControl('', [Validators.required, Validators.minLength(2)]),

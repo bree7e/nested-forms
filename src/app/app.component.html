@@ -116,16 +116,27 @@
     </svg>
   </div>
 
-  <!-- Resources -->
-  <h2>Providing ControlContainer</h2>
-
   <div class="card-container">
     <form [formGroup]="formGroup" class="card">
-      <app-general-form></app-general-form>
+      <div>
+        <div class="field">
+          <label>Name</label>
+          <input type="text" formControlName="name" class="" />
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <input type="text" formControlName="email" class="" />
+        </div>
+      </div>
+      <h3>Providing ControlContainer</h3>
       <app-address-form-first></app-address-form-first>
+      <h3>Form ControlValueAccessor</h3>
+      <app-address-form-third
+        formControlName="third-address"
+      ></app-address-form-third>
     </form>
     <div class="card">
-    	<pre>{{ formGroup.value | json }}</pre>
+      <pre>{{ formGroup.value | json }}</pre>
     </div>
   </div>
 

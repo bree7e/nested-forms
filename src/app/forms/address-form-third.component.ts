@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  ControlContainer,
   FormControl,
   FormGroup,
-  FormGroupDirective,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
   Validators,
 } from '@angular/forms';
 
+import { FormControlValueAccessorAdapter } from '../utils/form-control-value-accessor-connector';
+
 @Component({
-  selector: 'app-address-form-first',
+  selector: 'app-address-form-third',
   template: `
-    <ng-container formGroupName="first-address">
+    <ng-container [formGroup]="formGroup">
     	<div class="field">
     		<label>City</label>
     		<input type="text" formControlName="city" class="" />
@@ -19,21 +21,27 @@ import {
     		<label>Street</label>
     		<input type="text" formControlName="street" class="" />
     	</div>
-    	<!-- <pre>{{ formGroup?.value | json }}</pre> -->
     </ng-container>`,
-  viewProviders: [
-    { provide: ControlContainer, useExisting: FormGroupDirective },
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: AddressFormThirdComponent,
+      multi: true,
+    },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: AddressFormThirdComponent,
+      multi: true,
+    },
   ],
 })
-export class AddressFormFirstComponent implements OnInit {
+export class AddressFormThirdComponent
+  extends FormControlValueAccessorAdapter
+  implements OnInit {
   readonly formGroup = new FormGroup({
     city: new FormControl('', [Validators.required]),
     street: new FormControl('', [Validators.required, Validators.minLength(2)]),
   });
 
-  constructor(private parentForm: FormGroupDirective) {}
-
-  ngOnInit(): void {
-    this.parentForm.form.addControl('first-address', this.formGroup);
-  }
+  ngOnInit(): void {}
 }
