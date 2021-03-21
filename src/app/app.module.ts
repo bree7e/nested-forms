@@ -11,6 +11,7 @@ import {
   AddressFormThirdComponent,
   AddressFormFourthComponent,
   AddressFormFifthComponent,
+  AddressFormSixthComponent,
 } from './forms';
 
 @NgModule({
@@ -22,6 +23,7 @@ import {
     AddressFormThirdComponent,
     AddressFormFourthComponent,
     AddressFormFifthComponent,
+    AddressFormSixthComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
