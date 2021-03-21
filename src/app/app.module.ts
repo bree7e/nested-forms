@@ -5,10 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddressFormComponent } from './forms/address-form.component';
-import { AddressFormFirstComponent } from './forms/address-form-first.component';
-import { AddressFormSecondComponent } from './forms/address-form-second.component';
-import { AddressFormThirdComponent } from './forms/address-form-third.component';
-import { AddressFormFourthComponent } from './forms/address-form-fourth.component';
+import {
+  AddressFormFirstComponent,
+  AddressFormSecondComponent,
+  AddressFormThirdComponent,
+  AddressFormFourthComponent,
+  AddressFormFifthComponent,
+} from './forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { AddressFormFourthComponent } from './forms/address-form-fourth.componen
     AddressFormFirstComponent,
     AddressFormSecondComponent,
     AddressFormThirdComponent,
-    AddressFormFourthComponent
+    AddressFormFourthComponent,
+    AddressFormFifthComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

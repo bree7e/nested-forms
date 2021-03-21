@@ -121,11 +121,11 @@
       <div>
         <div class="field">
           <label>Name</label>
-          <input type="text" formControlName="name" class="" />
+          <input type="text" formControlName="name" />
         </div>
         <div class="field">
           <label>E-mail</label>
-          <input type="text" formControlName="email" class="" />
+          <input type="text" formControlName="email" />
         </div>
       </div>
       <h3>Pass FormGroup to @Input()</h3>
@@ -140,6 +140,10 @@
       <app-address-form-fourth
         (formReady)="addChildFormGroup($event)"
       ></app-address-form-fourth>
+      <h3>Child form has only view</h3>
+      <app-address-form-fifth
+        formGroupName="fifth-address"
+      ></app-address-form-fifth>
     </form>
     <div class="card">
       <pre>{{ formGroup.value | json }}</pre>
@@ -163,13 +167,5 @@
     />
   </svg>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <router-outlet></router-outlet>
