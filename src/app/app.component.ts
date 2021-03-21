@@ -11,6 +11,9 @@ export class AppComponent {
   readonly formGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    'third-address': new FormControl(),
+    'third-address': new FormControl({
+      city: '',
+      street: '',
+    }),
   });
 }

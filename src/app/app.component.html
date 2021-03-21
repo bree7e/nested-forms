@@ -128,9 +128,11 @@
           <input type="text" formControlName="email" class="" />
         </div>
       </div>
+      <h3>Pass FormGroup to @Input()</h3>
+      <app-address-form-first [parentForm]="formGroup"></app-address-form-first>
       <h3>Providing ControlContainer</h3>
-      <app-address-form-first></app-address-form-first>
-      <h3>Form ControlValueAccessor</h3>
+      <app-address-form-second></app-address-form-second>
+      <h3>ControlValueAccessor</h3>
       <app-address-form-third
         formControlName="third-address"
       ></app-address-form-third>
