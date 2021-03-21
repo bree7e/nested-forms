@@ -1,23 +1,18 @@
 import {
   Component,
-  EventEmitter,
   OnInit,
   Optional,
-  Output,
 } from '@angular/core';
 import {
-  ControlContainer,
-  FormControl,
   FormGroup,
   FormGroupDirective,
   FormGroupName,
-  Validators,
 } from '@angular/forms';
 
 @Component({
   selector: 'app-address-form-fifth',
   template: `
-    <ng-container [formGroup]="formGroup">
+    <ng-container *ngIf="formGroup" [formGroup]="formGroup">
     	<div class="field">
     		<label>City</label>
     		<input type="text" formControlName="city" class="" />
@@ -30,14 +25,16 @@ import {
     </ng-container>`,
 })
 export class AddressFormFifthComponent implements OnInit {
-  readonly formGroup: FormGroup = this.formGroupName?.name
-    ? (this.parentForm.form.controls[this.formGroupName.name] as FormGroup)
-    : this.parentForm.form;
+  formGroup?: FormGroup;
 
   constructor(
     private parentForm: FormGroupDirective,
     @Optional() private formGroupName: FormGroupName
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.formGroup = this.formGroupName?.name
+      ? (this.parentForm.form.controls[this.formGroupName.name] as FormGroup)
+      : this.parentForm.form;
+  }
 }
