@@ -126,6 +126,13 @@
               "devServerTarget": "nested-forms:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://bree7e.github.io/nested-forms/",
+            "name": "Nested Forms Demo"
+          }
         }
       }
     }
