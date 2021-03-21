@@ -146,7 +146,12 @@
       ></app-address-form-fifth>
     </form>
     <div class="card">
+      <h3>Form value</h3>
       <pre>{{ formGroup.value | json }}</pre>
+    </div>
+    <div class="card">
+      <h3>Errors</h3>
+      <pre>{{ getControlErrors(formGroup) | json }}</pre>
     </div>
   </div>
 
