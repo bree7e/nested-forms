@@ -136,6 +136,10 @@
       <app-address-form-third
         formControlName="third-address"
       ></app-address-form-third>
+      <h3>Catch FormGroup @Output() from child</h3>
+      <app-address-form-fourth
+        (formReady)="addChildFormGroup($event)"
+      ></app-address-form-fourth>
     </form>
     <div class="card">
       <pre>{{ formGroup.value | json }}</pre>

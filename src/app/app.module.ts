@@ -8,6 +8,7 @@ import { AddressFormComponent } from './forms/address-form.component';
 import { AddressFormFirstComponent } from './forms/address-form-first.component';
 import { AddressFormSecondComponent } from './forms/address-form-second.component';
 import { AddressFormThirdComponent } from './forms/address-form-third.component';
+import { AddressFormFourthComponent } from './forms/address-form-fourth.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AddressFormThirdComponent } from './forms/address-form-third.component'
     AddressFormFirstComponent,
     AddressFormSecondComponent,
     AddressFormThirdComponent,
+    AddressFormFourthComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],

@@ -16,4 +16,8 @@ export class AppComponent {
       street: '',
     }),
   });
+
+  addChildFormGroup(formGroup: FormGroup): void {
+    this.formGroup.addControl('fourth-address', formGroup);
+  }
 }
