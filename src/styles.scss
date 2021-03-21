@@ -5,6 +5,10 @@
   margin-bottom: 20px;
 }
 
+input.ng-touched.ng-invalid {
+  color: red;
+}
+
 label {
   display: block;
 }

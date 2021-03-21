@@ -28,7 +28,7 @@ import {
 export class AddressFormSecondComponent implements OnInit {
   readonly formGroup = new FormGroup({
     city: new FormControl('', [Validators.required]),
-    street: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    street: new FormControl('second-address', [Validators.required, Validators.minLength(2)]),
   });
 
   constructor(private parentForm: FormGroupDirective) {}

@@ -13,12 +13,12 @@ export class AppComponent {
     name: new FormControl('Sherlock ', [Validators.required]),
     email: new FormControl('Holmes', [Validators.required, Validators.email]),
     'third-address': new FormControl({
-      city: 'London',
-      street: '',
+      city: '',
+      street: 'third-address',
     }),
     'fifth-address': new FormGroup({
-      city: new FormControl('London', [Validators.required]),
-      street: new FormControl('', [
+      city: new FormControl('', [Validators.required]),
+      street: new FormControl('fifth-address', [
         Validators.required,
         Validators.minLength(2),
       ]),

@@ -25,7 +25,7 @@ import {
 export class AddressFormFourthComponent implements OnInit {
   readonly formGroup = new FormGroup({
     city: new FormControl('', [Validators.required]),
-    street: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    street: new FormControl('fourth-address', [Validators.required, Validators.minLength(2)]),
   });
 
   @Output() formReady = new EventEmitter<FormGroup>();
