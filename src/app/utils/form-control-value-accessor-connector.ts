@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { getControlErrors } from './get-control-erros.function';
 
 /**
  * Presents form as FormControl, value is an object
@@ -15,7 +16,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
  * - don't manipulate disabling in this or children classes, only from parent form
  */
 @UntilDestroy()
-export abstract class FormControlValueAccessorAdapter implements ControlValueAccessor, Validator {
+export abstract class FormControlValueAccessorAdapter
+  implements ControlValueAccessor, Validator {
   /** Form group */
   abstract formGroup: FormGroup;
 
@@ -42,6 +44,12 @@ export abstract class FormControlValueAccessorAdapter implements ControlValueAcc
   validate(c: AbstractControl): ValidationErrors | null {
     return this.formGroup.valid
       ? null
-      : { invalidForm: { value: this.formGroup.value, message: `Nested form is invalid` } };
+      : {
+          invalidForm: {
+            value: this.formGroup.value,
+            errors: getControlErrors(this.formGroup),
+            message: `Nested form is invalid`,
+          },
+        };
   }
 }

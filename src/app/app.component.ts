@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { getControlErrors } from './utils/form-utils.class';
+import { getControlErrors } from './utils/get-control-erros.function';
 
 @Component({
   selector: 'app-root',
